@@ -1,4 +1,182 @@
-// Array of objects to match all genre ids provided from API to correct genre string
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Haus: Movie Database</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+    box-sizing: border-box;
+    font-family: 'Architects Daughter', sans-serif;
+}
+
+body {
+    background-color: #283655;
+    margin:0;
+}
+
+header {
+    background-color: #1e1f26;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+.search {
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid #d0e1f9;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    color: rgb(223, 223, 223);
+}
+
+.search::placeholder {
+    color: #d0e1f9;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.search:focus {
+    outline: none;
+    background-color: #283655;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.movie {
+    margin: 1rem;
+    background-color: #4d648d;
+    width: 300px;
+    border-radius: 3px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.288);
+    overflow: hidden;
+    position:relative;
+}
+
+.movie img {
+    max-width: 100%;
+    height: 450px;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #eee;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.movie-info h3 {
+    margin: 0 10px 0 0;
+}
+
+.movie-info span {
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    height: 30px;
+}
+
+.green {
+    background-color: rgba(0, 128, 0, 0.836);
+    color: black;
+    font-size: 1.1rem;
+}
+
+.yellow {
+    background-color: rgba(202, 202, 5, 0.856);
+    color: black;
+    font-size: 1.1rem;
+}
+
+.red {
+    background-color: rgba(231, 6, 6, 0.89);
+    color: black;
+    font-size: 1.1rem;
+}
+
+.overview {
+    background-color: rgba(228, 228, 228, 0.85);
+    padding: 1.5rem 2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(101%);
+    transition: transform 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    overflow: auto;
+    max-height: 100%;
+    border-radius: 5px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+.overview h4 {
+    margin-top: 0;
+}
+
+.overview::-webkit-scrollbar {
+    width: 11px;
+    background: transparent;
+  }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #373b69;
+    border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(315deg, #2a5470 0%,  #2b2f53 54%);
+    } 
+
+.genre {
+    background: transparent;
+    font-family: 'Architects Daughter';
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+#logo {
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .search {
+        color: white;
+        width: 55%
+    }
+}
+
+</style>
+
+<!-- Movie Database Website Using TMDB API -->
+<body>   
+    <form action="submit" id="form">
+        <header>
+            <img id="logo" src="Reel Haus.png" alt="Reel Haus Logo">
+            <input type="text" id="search" placeholder="Search Movies" class="search">
+        </header>
+        <main></main>
+    </form>
+<script>
+    // Array of objects to match all genre ids provided from API to correct genre string
 const genres = [
     {
       "id": 28,
@@ -126,7 +304,7 @@ function showMovies(movies){
         if(poster_path){
             poster_path =  IMGPATH + poster_path;
         } else {
-            poster_path = "/images/404.png";
+            poster_path = "404.png";
         }
             
         // To fill in movie card and append to page
@@ -202,4 +380,7 @@ form.addEventListener('submit', async (e) => {
 // Reload page upon logo click
 logo.addEventListener('click', () => {
     location.reload();
-});
+});        
+</script>
+</body>
+</html>

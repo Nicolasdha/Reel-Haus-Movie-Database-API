@@ -1,0 +1,22 @@
+{
+  "name": "reel_haus_movie_database",
+  "version": "1.0.0",
+  "description": "Reel Haus Movie Database",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicolasdha/Reel-Haus-Movie-Database-API.git"
+  },
+  "author": "Nicolas Durik-Ha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicolasdha/Reel-Haus-Movie-Database-API/issues"
+  },
+  "homepage": "https://github.com/Nicolasdha/Reel-Haus-Movie-Database-API#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
