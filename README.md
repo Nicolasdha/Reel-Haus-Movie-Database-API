@@ -21,13 +21,11 @@ Hello! This application is perfect for anyone looking for information about any 
 ### Technologies
 This application was created using the following technologies:
 
-
-|              |              |
-| :----------- | :------------: |
-|    HTML     |   CSS|
-| Javascript|   Github Pages |
-|TheMovieDatabase| |
-
+* HTML
+* CSS
+* Javascript
+* TheMovieDatabase
+* Github Pages
 
 
 ### Launch
